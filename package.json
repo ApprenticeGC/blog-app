@@ -41,6 +41,7 @@
     "webpack-validator": "*"
   },
   "dependencies": {
+    "lodash": "*",
     "lowlight": "*",
     "lunr": "*",
     "mobx": "*",

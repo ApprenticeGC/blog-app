@@ -8,7 +8,19 @@ import { Link } from 'react-router';
 const styles = {
   base: {
     width: '60%',
-    margin: 'auto'
+    margin: 'auto',
+
+    '@media (min-width: 320px)': {
+      width: '90%'
+    },
+
+    '@media (min-width: 520px)': {
+      width: '80%'
+    },
+
+    '@media (min-width: 900px)': {
+      width: '60%'
+    }    
   }
 }
 

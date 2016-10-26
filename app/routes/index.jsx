@@ -9,6 +9,7 @@ import Article from '../containers/Article';
 import Overview from '../containers/Overview';
 
 export default (
+  onEnterArticle
 ) => {
   return (
     <Route path="/" component={AppLayout}>
@@ -18,6 +19,7 @@ export default (
       <Route
         path="articles/:articleId"
         component={Article}
+        onEnter={onEnterArticle}
       />
       <Route
         path="about"
