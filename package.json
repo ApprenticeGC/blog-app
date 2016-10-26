@@ -42,8 +42,10 @@
   },
   "dependencies": {
     "lowlight": "*",
+    "lunr": "*",
     "mobx": "*",
     "mobx-react": "*",
+    "oboe": "*",
     "radium": "0.18.1",
     "radium-grid": "2.0.1",
     "react": "*",
