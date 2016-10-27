@@ -1,15 +1,77 @@
 import { observable, computed, reaction, action } from 'mobx';
+import lunr from 'lunr';
+import oboe from 'oboe';
 
 import data from './data.json';
 import viewData from './viewData.json';
 
+const lunrIdx = lunr(function() {
+  this.field('title', { boost: 10 });
+  this.field('content');
+});
+
 export default class {
   @observable articles = [];
+  @observable indexedArticles = [];
   @observable articleLayouts = [];
 
+  idx = null;
+
   constructor() {
-    this.articles = data.articles;
+    this.idx = lunrIdx;
+    
+    // this.articles = data.articles;
     this.articleLayouts = viewData.articles;
+
+    oboe('https://s3-us-west-2.amazonaws.com/s.cdpn.io/138943/fake-blog-data.json')
+      .path('articles.*', () => {
+        //console.log('article founded, load should be done soon');
+      })
+      .node('articles.*', (article) => {
+        // console.log('article loaded, show next line');
+        this.articles.push(article);
+      })
+      .done((allArticles) => {
+        this.articles.forEach(a => this.indexedArticles.push(a));
+
+        const adjustedArticles = this.articles.map((article, index) => {
+          const combinedContent = article.detail.reduce((previousValue, currentValue, currentIndex, array) => {
+            let combined = previousValue;
+            if (currentValue.content.kind === 'text') {
+              combined = previousValue + '\n' + currentValue.content.data
+            }
+
+            return combined;
+          }, "");
+
+          return {
+            title: article.title,
+            content: combinedContent,
+            id: index
+          };
+        });
+
+        adjustedArticles.forEach(a => this.idx.add(a));
+      });
+  }
+
+  @action
+  filterIndexedArticle(keyPhrase) {
+    // Fake filtering to resturn only one
+    if (keyPhrase !== '') {
+      const result = this.idx.search(keyPhrase);
+      // console.log(result);
+      if (result.length !== 0) {
+        this.indexedArticles.length = 0;
+        result.forEach(r => {
+          const article = this.articles[r.ref];
+          this.indexedArticles.push(article);
+        });
+      }
+    } else {
+      this.indexedArticles.length = 0;
+      this.articles.forEach(a => this.indexedArticles.push(a));
+    }
   }
 
   @action
