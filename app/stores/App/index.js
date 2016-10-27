@@ -34,6 +34,7 @@ export default class {
                   // console.log(firstContent);
                   if (firstContent !== undefined) {
                     // result = (<div><code>{firstContent.content}</code></div>);
+                    d.content.language = firstContent.language;
                     d.content.fetchedData = firstContent.content;
                   }
                 }

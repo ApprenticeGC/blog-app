@@ -6,6 +6,8 @@ import { inject, observer } from 'mobx-react';
 // import { Link} from 'react-router';
 import remark from "remark";
 import remarkReact from "remark-react";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco, grayscale } from 'react-syntax-highlighter/dist/styles';
 
 const _ = inject(
   'appStore'
@@ -21,7 +23,16 @@ const _ = inject(
     } else if (kind === 'code') {
       if (subKind === 'inline') {
       } else if (subKind === 'gist') {
-        result = (<div><code>{inContent.fetchedData}</code></div>);
+        //result = (<div><code>{inContent.fetchedData}</code></div>);
+        result = (
+          <SyntaxHighlighter
+            language={inContent.language}
+            showLineNumbers
+            style={grayscale}
+          >
+            {inContent.fetchedData}
+          </SyntaxHighlighter>
+        );
       }
     }
 
