@@ -17,9 +17,14 @@ export default class {
 
   idx = null;
 
+  // constructor() {
+  //   this.articles = data.articles;
+  //   this.articleLayouts = viewData.articles;
+  // }
+
   constructor() {
     this.idx = lunrIdx;
-    
+
     // this.articles = data.articles;
     this.articleLayouts = viewData.articles;
 
@@ -96,6 +101,7 @@ export default class {
                   // console.log(firstContent);
                   if (firstContent !== undefined) {
                     // result = (<div><code>{firstContent.content}</code></div>);
+                    d.content.filename = firstContent.filename;
                     d.content.language = firstContent.language;
                     d.content.fetchedData = firstContent.content;
                   }

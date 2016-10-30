@@ -41,27 +41,23 @@
     "webpack-validator": "*"
   },
   "dependencies": {
-    "lodash": "*",
     "lowlight": "*",
     "lunr": "*",
+    "material-ui": "*",
     "mobx": "*",
     "mobx-react": "*",
+    "moment": "*",
     "oboe": "*",
     "radium": "0.18.1",
     "radium-grid": "2.0.1",
     "react": "*",
     "react-dom": "*",
-    "react-syntax-highlighter": "*",
+    "react-moment": "*",
     "react-router": "*",
+    "react-syntax-highlighter": "*",
     "react-tap-event-plugin": "*",
-    "react-youtube": "*",
-    "rehype": "*",
-    "rehype-parse": "*",
-    "rehype-react": "*",
     "remark": "*",
     "remark-react": "*",
-    "rxjs": "*",
-    "unified": "*",
-    "whatwg-fetch": "*"
+    "rxjs": "*"
   }
 }

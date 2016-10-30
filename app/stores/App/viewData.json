@@ -5,23 +5,28 @@
       "detail": [
         {
           "id": "747fbf25-fbf6-4409-ba8f-a946c98e8fd8",
-          "width": "1"
+          "width": "1",
+          "height": "auto"
         },
         {
           "id": "c61edbe4-d892-4c8f-9dd4-1dc9d0997663",
-          "width": "1/2"
+          "width": "1",
+          "height": "auto"
         },
         {
           "id": "5efc303b-b063-4555-9cab-0a9dfa3348d6",
-          "width": "1/2"
+          "width": "1",
+          "height": "auto"
         },
         {
           "id": "62cf3d0f-9f74-4902-a5de-b1f30b5045a9",
-          "width": "1"
+          "width": "1",
+          "height": "auto"
         },
         {
           "id": "2ce471bc-71b3-45a5-9004-429f9146dbab",
-          "width": "1"
+          "width": "1",
+          "height": "auto"
         }
       ]
     },
@@ -30,7 +35,8 @@
       "detail": [
         {
           "id": "5b8634c8-7f2d-4d90-afd9-301abac90532",
-          "width": "1"
+          "width": "1",
+          "height": "auto"
         }
       ]
     },
@@ -39,7 +45,8 @@
       "detail": [
         {
           "id": "08420b96-8136-4790-89c3-6ebcb92d1368",
-          "width": "1"
+          "width": "1",
+          "height": "auto"
         }
       ]
     }

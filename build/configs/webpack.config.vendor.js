@@ -26,10 +26,22 @@ export default validate({
       'react',
       'react-dom',
 
+      'material-ui',
+
       'radium',
       'radium-grid',
 
-      'react-tap-event-plugin'
+      'mobx-react',
+
+      'react-moment',
+
+      'react-router',
+
+      'react-syntax-highlighter',
+
+      'react-tap-event-plugin',
+
+      'remark-react'
     ],
 
     coreRelated: [
@@ -37,19 +49,19 @@ export default validate({
 
       'lowlight',
 
+      'lunr',
+
       'mobx',
-      'mobx-react',
 
-      'react-router',
+      'moment',
 
-      'react-syntax-highlighter',
+      'oboe',
 
       'remark',
-      'remark-react',
+      'rxjs'
 
-      'rxjs',
-
-      'whatwg-fetch'
+      //
+      // 'whatwg-fetch'
     ]
   },
 
