@@ -2,10 +2,11 @@
   "articles": [
     {
       "id": "93ce9a06-a783-45a2-a50c-8a1728057f8d",
-      "title": "Whatever it takes, we shall try it",
-      "subTitle": "Well that doesn't mean it's not painful",
+      "title": "來開發靜態網誌",
+      "subTitle": "不是找不到合用的，而是想要自我學習",
+      "date": "2016-10-10T12:59-0800",
       "categories": [
-
+        "學習React"
       ],
       "tags": [
         "Kotlin",
@@ -17,7 +18,7 @@
           "content": {
             "kind": "text",
             "subKind": "markdown",
-            "data": "## Dum caeli sacrilegi committere fronte nomenque\n\n[Lorem](http://dum.org/) markdownum proditus mersit gemitus boum esse fetus debueram ut quam. Teli amicos.\n [Fit Aesone](http://www.repulsa.net/): barba succendit corpora summo fuerat cornuaque saepe et patriam gentibus virgo. Troiae quoque patrem, carmina non ante nec capillos rerum! Vellem sidera."
+            "data": "自從結束了Ghost的服務後，就沒有“動筆”寫過任何部落格了。有時想想，雖然自己時常有解決當下開發會碰到問題的情況，但往往東拚西湊的將解決方案放入後，又會因為需求的改變，而不再需要此解決方案。然而，找尋解決方案的當下卻常常花去不少時間，這樣的過程最後沒有被記錄下來，怎麼想都覺得時間浪費掉了，況且同樣的情況日後又有可能碰到，仍會有一定的時間耗損在找尋解決方法上。"
           }
         },
         {
@@ -25,7 +26,7 @@
           "content": {
             "kind": "text",
             "subKind": "markdown",
-            "data": "## Poco ar thei\n\nExtemplo est similem usum est materna frena Argolis postquam; venit? Sicaniam iubebat infelix! Et admonitu Europaei fuerat extrema; o! Aequor demit! Contingere lapsum clarissimus spatio!"
+            "data": "多方的考量下，還是決定繼續撰寫部落格。所以花了一些時間找尋部落格的平台，試圖讓自己再度的回到用部落格記錄開發的習慣裡。然而過往已嘗試過Wordpress、Blogger、Tumblr和Ghost萌，對於這些現有的部落格平台，本身是很喜歡Wordpress和Ghost，但Wordpress.com有很多限制，感覺很麻煩，而Ghost，現在所推出的月費方案實在是太不親民了，所以也只好離開了。當然，也試過了這一、二年竄起的Medium，也還是覺得有些不適合。於是，自行架設部落格的想法，就浮現於腦海中。"
           }
         },
         {
@@ -33,7 +34,7 @@
           "content": {
             "kind": "text",
             "subKind": "markdown",
-            "data": "## Vicinia palluit et cui sic in luserit\n\nEnim colla tulisset, telluris te meis de ducit, et **amaverat** nequiquam montano si. Mihi verti prope foedere cum hostia fallor onerosa sidera, tamen."
+            "data": "自行架設部落格最快的方式不外乎就是利用現有的開源部落格平台，像是Wordpress和Ghost等，但一來曾經使用過官方所推出的方案，二來需要將它們配置在伺服器上配合資料庫後才能順利使用。不想額外配置伺服器的考量下，就不再考慮這些方案了。花了一些時間在找尋不用架伺服器的方法，而這樣的探索，就引領到靜態網頁的範疇。"
           }
         },
         {
@@ -42,9 +43,14 @@
             "kind": "code",
             "subKind": "gist",
             "data": {
-              "id": "84303e7fb9bc49f54aef84f09d91c496"
+              "id": "10845e39fbce64242d8f43f86977d3ae",
+              "files": [
+                "MainActivity.java",
+                "MainActivity.kt",
+                "build-module.gradle"
+              ]
             },
-            "fetchedData": ""
+            "fetchedData": []
           }
         },
         {
@@ -52,15 +58,16 @@
           "content": {
             "kind": "text",
             "subKind": "markdown",
-            "data": "## Notas iustissime feror\n\nEt quique abscessisse, dicunt *fulmineo* cuncta ignaroque Europam cognoscere Quid glomerabat tolles te excipit declinat tectus pavidam ne est. Invergens quam omne rostro maternaque e prima inmensum possent ubi mitis, sole. \n\n1. Mente sucos ponti vocat satis invicti habenas\n2. Dominum victus caput\n3. Maeoniam sacra\n4. Tua centum amorem honores verba loqui\n5. Maduere ereptamque patrem sustinet erat signum favus"
+            "data": "在開源盛行的年代，靜態網頁也是百家爭鳴，舉凡像是Jekyll、Pelican、Hugo或是Hexo等，由不同的程式語言寫出來的，除了讓選擇更加多元外，也相對的讓部署或是修改變的容易了。Hugo看起了相當的有吸引力，就單純以架設和使用的角度來看，也算是很簡單，但它是用Go撰寫的，對於日後的修改、調整上，會有一些麻煩，畢竟現在還沒有想要了解Go。"
           }
         }
       ]
     },
     {
       "id": "aa690224-b593-4eee-bd85-e98e502d10d4",
-      "title": "Fear not, it is never going to be end",
-      "subTitle": "The problem is, if it is not finished, we stuck here",
+      "title": "它從來都沒有結束",
+      "subTitle": "但這也造成很大的問題，那我們要如何離開？",
+      "date": "2016-10-12T16:59-0800",
       "categories": [
 
       ],
@@ -82,8 +89,9 @@
     },
     {
       "id": "385bc708-26c4-4fb1-a930-64bff44898f2",
-      "title": "Just try it as hard as you can",
-      "subTitle": "Until you certainly can not contribute more",
+      "title": "盡力而為",
+      "subTitle": "直到你真的無法再往下時才放棄",
+      "date": "2016-10-17T19:33-0800",
       "categories": [
 
       ],

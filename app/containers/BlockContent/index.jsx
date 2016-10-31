@@ -17,26 +17,28 @@ injectTapEventPlugin();
 const styles = {
 };
 
-const CodeBlock = (props) => {
-  const { filename, language, s, data } = props;
+const CodeBlock = observer((props) => {
+  const { s, data } = props;
 
   return (
     <Tabs>
-      <Tab label={filename} >
-        <SyntaxHighlighter
-         language={language}
-         showLineNumbers
-         style={[s]}
+      {data.map((d, index) =>
+        <Tab
+          key={index}
+          label={d.filename}
         >
-         {data}
-        </SyntaxHighlighter>
-      </Tab>
-      <Tab label="Item Two" >
-        <p>Cool</p>
-      </Tab>
+          <SyntaxHighlighter
+           language={d.language}
+           showLineNumbers
+           style={[s]}
+          >
+           {d.content}
+          </SyntaxHighlighter>
+        </Tab>
+      )}
     </Tabs>
   );
-};
+});
 
 
 const _ = inject(
@@ -59,8 +61,6 @@ const _ = inject(
         //result = (<div><code>{inContent.fetchedData}</code></div>);
         result = (
           <CodeBlock
-            filename={inContent.filename}
-            language={inContent.language}
             s={grayscale}
             data={inContent.fetchedData}
           />

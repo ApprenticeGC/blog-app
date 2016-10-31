@@ -24,6 +24,19 @@ const styles = {
       color: '#555'
     }
   },
+  categoryListSection: {
+    listStyle: 'none outside none',
+    margin: '-1em 0',
+    padding: 0,
+    // width: '20em',
+    borderLeft: '2px solid #aaa'
+  },
+  categoryListItem: {
+    color: '#999',
+    display: 'inline',
+    margin: '0 0em',
+    padding: '0 0.2em'
+  },
   listSection: {
     listStyle: 'none outside none',
     margin: '-1em 0',
@@ -41,17 +54,19 @@ const _ = (props) => {
 
   return (
     <div>
-      <RLink style={styles.rlink} to={ `articles/${id}` }>
-        <h2>{title}</h2>
-      </RLink>
       <div>
-        <ul style={styles.listSection}>
+        <ul style={styles.categoryListSection}>
           {categories.map((categorey, index) =>
-            <li key={index} style={styles.listItem}>
+            <li key={index} style={styles.categoryListItem}>
               {categorey}
             </li>
           )}
         </ul>
+      </div>
+      <RLink style={styles.rlink} to={ `articles/${id}` }>
+        <h2>{title}</h2>
+      </RLink>
+      <div>
         <ul style={styles.listSection}>
           {tags.map((tag, index) =>
             <li key={index} style={styles.listItem}>

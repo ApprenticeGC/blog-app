@@ -86,7 +86,7 @@ export default class {
     article.detail.forEach(d => {
       if (d.content.kind === 'code') {
         if (d.content.subKind === 'gist') {
-          if (d.content.fetchedData === '') {
+          if (d.content.fetchedData.length === 0) {
             const path = 'https://api.github.com/gists/' + d.content.data.id;
             fetch(path)
               .then((response) => {
@@ -96,16 +96,36 @@ export default class {
               .then((dataJson) => {
                 const convertedArray = Object.keys(dataJson.files).map(key => dataJson.files[key]);
                 if (convertedArray !== undefined && convertedArray !== null) {
-                  const [firstContent, ...tail] = convertedArray;
-                  // const firstContent = _.head(convertedArray);
-                  // console.log(firstContent);
-                  if (firstContent !== undefined) {
-                    // result = (<div><code>{firstContent.content}</code></div>);
-                    d.content.filename = firstContent.filename;
-                    d.content.language = firstContent.language;
-                    d.content.fetchedData = firstContent.content;
-                  }
+                  d.content.data.files.forEach(f => {
+                    // console.log(f);
+                    const found = convertedArray.find(cf => cf.filename === f);
+                    // console.log(found);
+                    if (found !== undefined) {
+                      d.content.fetchedData.push(found);
+                    }
+                  })
+                  // convertedArray.find(f => f.filename)
+
+                  // convertedArray.forEach(f => {
+                  //   d.content.fetchedData.push({
+                  //     filename: f.filename,
+                  //     language: f.language,
+                  //     content: f.content
+                  //   });
+                  // });
                 }
+
+                // if (convertedArray !== undefined && convertedArray !== null) {
+                //   const [firstContent, ...tail] = convertedArray;
+                //   // const firstContent = _.head(convertedArray);
+                //   // console.log(firstContent);
+                //   if (firstContent !== undefined) {
+                //     // result = (<div><code>{firstContent.content}</code></div>);
+                //     d.content.filename = firstContent.filename;
+                //     d.content.language = firstContent.language;
+                //     d.content.fetchedData = firstContent.content;
+                //   }
+                // }
               })
               .catch((err) => {
                 console.error(err.message);

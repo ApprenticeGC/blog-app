@@ -45,7 +45,7 @@ const styles = {
     fontWeight: '500'
   },
   dateArea: {
-    width: '10em',
+    width: '8em',
     borderBottom: '1px solid #aaa',
     margin: '3em 0'
   },
@@ -62,7 +62,7 @@ const styles = {
 const _ = inject(
   'appStore'
 )(observer((props) => {
-  const dateToFormat = '2016-04-19T12:59-0500';
+  // const dateToFormat = '2016-04-19T12:59-0500';
   const articleId = props.params.articleId;
   const article = props.appStore.articles.find(a => a.id === articleId);
   const detail = article.detail;
@@ -107,7 +107,7 @@ const _ = inject(
       <h2 style={styles.subTitle}>{article.subTitle}</h2>
       <div style={styles.dateArea}>
         <h3 style={styles.date}>
-          <Moment format="MMM DD, YYYY">{dateToFormat}</Moment>
+          <Moment format="MMM DD, YYYY">{article.date}</Moment>
         </h3>
       </div>
 
